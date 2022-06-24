@@ -1,3 +1,7 @@
+// slice is collection of reducer logic and action for single feature in an app
+// blog might have a slice for post and another for comment
+// handle the logic of each differently so each get their slices
+
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
 
