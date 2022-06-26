@@ -6,7 +6,7 @@ import Search from './components/SearchButton'
 
 function App() {
   return (
-    <div className="text-center mt-10 h-screen bg-gradient-to-t from-indigo-300 flex-col justify-center items-center">
+    <div className="text-center pt-10 bg-indigo-300 flex-col justify-center items-center">
       <Row className=''>
         <Col span={24}>
           <Search />

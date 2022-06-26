@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { Input } from 'antd'
+import Card from './Card';
 
 const { Search } = Input;
 
@@ -25,12 +26,26 @@ function SearchButton() {
 
   return (
     <>
-    <Search placeholder="Enter artist name" allowClear onSearch={fetchData} style={{ width: 300 }} onChange={handleOnChange} />
+      <Search
+        placeholder="Enter artist name" style={{ width: 500 }} allowClear onSearch={fetchData} onChange={handleOnChange} />
+      
+      <div className="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 gap-2 mt-10 ml-20">
       {
         albums.length > 1 && albums.map(album => {
-          return <div>{album.artistName}</div>
+          return <Card
+            key={album.collectionId}
+            imageURL={album.artworkUrl100}
+            collectionName={album.collectionName}
+            collectionPrice={album.collectionPrice}
+            currency={album.currency}
+            releaseDate={album.releaseDate}
+            artistName={album.artistName}
+            trackCount={album.trackCount}
+          />
         })
       }
+      </div>
+
     </>
   )
 }
